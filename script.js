@@ -13,7 +13,7 @@ WHEN I scroll down
 WHEN I view the time blocks for that day
   DONE - THEN each time block is color-coded to indicate whether it is in the past, present, or future
 WHEN I click into a time block
-THEN I can enter an event
+  DONE - THEN I can enter an event
 WHEN I click the save button for that time block
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
@@ -24,6 +24,8 @@ THEN the saved events persist
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  // Object to store user data
+  //const scheduleData = {};
   // Store the current hour
   let currentHour = dayjs().format('HH');
 
@@ -33,7 +35,17 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  //
+
+  // Add event listener to the save buttons after html load
+  $(".saveBtn").on("click", function() {
+    //scheduleData[$(this).parent().attr("id")] = $(this).prev().val();
+    localStorage.setItem($(this).parent().attr("id"), JSON.stringify($(this).prev().val()));
+    //console.log(JSON.parse(localStorage.getItem($(this).parent().attr("id"))));
+  });
+
+
+
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
