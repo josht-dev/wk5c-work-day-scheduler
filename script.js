@@ -28,7 +28,7 @@ $(function () {
   // Retrieve any local user data and populate schedule
   for (let i = 0; i < localStorage.length; i++) {
     // Use localStorage key to place data in html div id's
-    $("#" + localStorage.key(i)).children("textarea").val(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    $("#" + localStorage.key(i)).children("textarea").val(localStorage.getItem(localStorage.key(i)));
   }
 
   // Add the current date/time to the HTML
