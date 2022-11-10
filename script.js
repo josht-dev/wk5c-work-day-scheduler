@@ -15,9 +15,9 @@ WHEN I view the time blocks for that day
 WHEN I click into a time block
   DONE - THEN I can enter an event
 WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
+  DONE - THEN the text for that event is saved in local storage
 WHEN I refresh the page
-THEN the saved events persist
+  DONE - THEN the saved events persist
 */
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -39,7 +39,7 @@ $(function () {
   // Add event listener to the save buttons after html load
   $(".saveBtn").on("click", function() {
     //scheduleData[$(this).parent().attr("id")] = $(this).prev().val();
-    localStorage.setItem($(this).parent().attr("id"), JSON.stringify($(this).prev().val()));
+    localStorage.setItem($(this).parent().attr("id"), $(this).prev().val());
     //console.log(JSON.parse(localStorage.getItem($(this).parent().attr("id"))));
   });
 
@@ -72,6 +72,12 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+
+  // Retrieve any local user data and populate schedule
+  for (let i = 0; i < localStorage.length; i++) {
+    // Use localStorage key to place data in html div id's
+    $("#" + localStorage.key(i)).children("textarea").val(JSON.parse(localStorage.getItem(localStorage.key(i))));
+  }
 
   // Add the current date/time to the HTML
   $("#currentDay").text(dayjs().format('dddd, MMMM D, YYYY'));
