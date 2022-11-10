@@ -9,6 +9,7 @@ $(function () {
     localStorage.setItem($(this).parent().attr("id"), $(this).prev().val());
   });
 
+  // Add the past, present, and future classes to the html divs
   for (let i = 0; i < htmlHourDivs.length; i++) {
     // Get the current html hour div
     let divId = htmlHourDivs[i].id;
