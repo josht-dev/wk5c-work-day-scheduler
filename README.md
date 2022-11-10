@@ -2,34 +2,24 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+To help users time box their daily tasks for the work day, this scheduler will allow them to add events to hour slots and save them locally. When they reload the page, it will retrieve any saved data and color code the times depending on if the hour slot is from the past, present, or for the future. The jQeury and Day.js API's were used for this project. Starter files with the Bootstrap framework were provided.
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+N/A
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Add events to the schedular by typing inside the grey, red, or green time slots. Clicking the save button on the left will save the events to the users local storage. Reloading the page will retrieve any events from the local storage.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Deployed page link: https://josht-dev.github.io/wk5c-work-day-scheduler/
 
-![alt text](./assets/images/screenshot.png)
-
+![screenshot](./assets/images/wk5_challenge_wk5c-work-day-scheduler_index.html.png)
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+N/A
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+Refer to the LICENSE in the repo. 
