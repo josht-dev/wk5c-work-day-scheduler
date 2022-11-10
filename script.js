@@ -1,17 +1,14 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   // Store the current hour
   let currentHour = dayjs().format('HH');
+  // Set the business hours styles depending on the hour
+  const htmlHourDivs = $(".time-block");
 
   // Add event listener to the save buttons after html load
   $(".saveBtn").on("click", function() {
     localStorage.setItem($(this).parent().attr("id"), $(this).prev().val());
   });
 
-  // Set the business hours styles depending on the hour
-  const htmlHourDivs = $(".time-block");
   for (let i = 0; i < htmlHourDivs.length; i++) {
     // Get the current html hour div
     let divId = htmlHourDivs[i].id;
