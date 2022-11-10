@@ -7,11 +7,11 @@ SO THAT I can manage my time effectively
 ***Acceptance Criteria***
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
+  DONE - THEN the current day is displayed at the top of the calendar
 WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
+  DONE - THEN I am presented with time blocks for standard business hours
 WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
+  DONE - THEN each time block is color-coded to indicate whether it is in the past, present, or future
 WHEN I click into a time block
 THEN I can enter an event
 WHEN I click the save button for that time block
@@ -20,22 +20,10 @@ WHEN I refresh the page
 THEN the saved events persist
 */
 
-// ***Global variables***
-const htmlHourDivs = $(".time-block");
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-
-  // TESTING FOR HOUR VARIABLE
-  let currentHour = 10;
-
-  // Store the current hour
-  //let currentHour = dayjs().format('HH');
-  console.log(currentHour);
-
-
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -49,7 +37,15 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
+  // TESTING FOR HOUR VARIABLE
+  let currentHour = 10;
+
+  // Store the current hour
+  //let currentHour = dayjs().format('HH');
+  console.log(currentHour);
+
   // Set the business hours styles depending on the hour
+  const htmlHourDivs = $(".time-block");
   for (let i = 0; i < htmlHourDivs.length; i++) {
     // Get the current html hour div
     let divId = htmlHourDivs[i].id;
