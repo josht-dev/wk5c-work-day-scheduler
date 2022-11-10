@@ -24,6 +24,9 @@ THEN the saved events persist
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  // Store the current hour
+  let currentHour = dayjs().format('HH');
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -36,13 +39,6 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-
-  // TESTING FOR HOUR VARIABLE
-  let currentHour = 10;
-
-  // Store the current hour
-  //let currentHour = dayjs().format('HH');
-  console.log(currentHour);
 
   // Set the business hours styles depending on the hour
   const htmlHourDivs = $(".time-block");
